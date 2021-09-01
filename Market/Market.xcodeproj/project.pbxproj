@@ -13,9 +13,12 @@
 		C67C55AC26DF789E00128E16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C67C559B26DF771500128E16 /* Assets.xcassets */; };
 		C67C55AD26DF789E00128E16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67C559C26DF771500128E16 /* LaunchScreen.storyboard */; };
 		C67C55AE26DF789E00128E16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67C559826DF771500128E16 /* Main.storyboard */; };
+		C67C55B726DF7FF400128E16 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C67C55B626DF7FF400128E16 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		426795E957742DB408002C94 /* Pods-Market.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.debug.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.debug.xcconfig"; sourceTree = "<group>"; };
+		AD4AAEC96D09EDE74FE18737 /* Pods-Market.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.release.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.release.xcconfig"; sourceTree = "<group>"; };
 		C67C556E26DF74EF00128E16 /* Market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Market.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67C558626DF771500128E16 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C67C558A26DF771500128E16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		C67C559926DF771500128E16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C67C559B26DF771500128E16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C67C559D26DF771500128E16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C67C55B626DF7FF400128E16 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,8 +44,11 @@
 		C67C556526DF74EF00128E16 = {
 			isa = PBXGroup;
 			children = (
+				C67C55B626DF7FF400128E16 /* .swiftlint.yml */,
 				C67C557026DF74EF00128E16 /* Market */,
 				C67C556F26DF74EF00128E16 /* Products */,
+				F77BC897AEB09DB2EF993971 /* Pods */,
+				FFA0E2786DBEEA01D78CB365 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +138,22 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		F77BC897AEB09DB2EF993971 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				426795E957742DB408002C94 /* Pods-Market.debug.xcconfig */,
+				AD4AAEC96D09EDE74FE18737 /* Pods-Market.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FFA0E2786DBEEA01D78CB365 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +161,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C67C558226DF74EF00128E16 /* Build configuration list for PBXNativeTarget "Market" */;
 			buildPhases = (
+				62FBF2B6193EC0B3F7BE4467 /* [CP] Check Pods Manifest.lock */,
 				C67C556A26DF74EF00128E16 /* Sources */,
 				C67C556B26DF74EF00128E16 /* Frameworks */,
 				C67C556C26DF74EF00128E16 /* Resources */,
+				C67C55B526DF7D6F00128E16 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -188,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C67C55B726DF7FF400128E16 /* .swiftlint.yml in Resources */,
 				C67C55AD26DF789E00128E16 /* LaunchScreen.storyboard in Resources */,
 				C67C55AC26DF789E00128E16 /* Assets.xcassets in Resources */,
 				C67C55AE26DF789E00128E16 /* Main.storyboard in Resources */,
@@ -195,6 +221,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62FBF2B6193EC0B3F7BE4467 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Market-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C67C55B526DF7D6F00128E16 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C67C556A26DF74EF00128E16 /* Sources */ = {
@@ -347,6 +415,7 @@
 		};
 		C67C558326DF74EF00128E16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 426795E957742DB408002C94 /* Pods-Market.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -365,6 +434,7 @@
 		};
 		C67C558426DF74EF00128E16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD4AAEC96D09EDE74FE18737 /* Pods-Market.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
