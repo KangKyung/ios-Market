@@ -5,3 +5,5 @@ excluded:
 disabled_rules:
   - function_parameter_count
   - trailing_whitespace
+  - identifier_name
+line_length: 100
