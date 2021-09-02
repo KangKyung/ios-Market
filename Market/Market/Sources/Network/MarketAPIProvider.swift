@@ -18,25 +18,23 @@ struct MarketAPIProvider {
     
     private func dataTask(with urlRequest: URLRequest,
                           completionHandler: @escaping (Result<Data, ProviderError>) -> Void) {
-        session.dataTask(with: urlRequest, completionHandler: { data, response, error in
+        session.dataTask(with: urlRequest) { data, response, error in
             guard error == nil else {
                 completionHandler(.failure(.connectionProblem))
                 return
             }
-            
             guard let response = response as? HTTPURLResponse,
                   RequestType.successStatusCode.contains(response.statusCode) else {
                 completionHandler(.failure(.invalidResponse))
                 return
             }
-            
             guard let data = data else {
                 completionHandler(.failure(.invalidData))
                 return
             }
             
             completionHandler(.success(data))
-        }).resume()
+        }.resume()
     }
     func getData(apiRequestType: RequestType,
                  completionHandler: @escaping (Result<Data, ProviderError>) -> Void) {
