@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum HttpMethod: CustomStringConvertible {
+enum HttpMethod {
     
     case get, post, put, patch, delete
     
-    var description: String {
+    var type: String {
         switch self {
         case .get:
             return "GET"

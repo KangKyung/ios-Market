@@ -34,7 +34,7 @@ extension MultiPartRequestProtocol {
         
         return urlRequest
     }
-    func multiPartBody(name: String, value: Any) -> Data {
+    private func multiPartBody(name: String, value: Any) -> Data {
         var data = Data()
         data.appendString("--\(Self.boundary)\r\n")
         data.appendString("Content-Disposition: form-data; name=\"\(name)\"\r\n\r\n")
@@ -42,7 +42,7 @@ extension MultiPartRequestProtocol {
         
         return data
     }
-    func multiPartBodyOfImage(imageName: String, images: [Data]) -> Data {
+    private func multiPartBodyOfImage(imageName: String, images: [Data]) -> Data {
         var data = Data()
         for image in images {
             data.appendString("--\(Self.boundary)\r\n")

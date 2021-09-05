@@ -10,5 +10,5 @@ import Foundation
 struct ListSearchResponseModel: Decodable {
     
     let page: Int
-    let items: [Item]
+    let items: [Product]
 }

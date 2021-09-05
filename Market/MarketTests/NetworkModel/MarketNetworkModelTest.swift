@@ -17,7 +17,6 @@ class MarketNetworkModelTest: XCTestCase {
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses = [MockURLProtocol.self]
         let urlSession = URLSession.init(configuration: configuration)
-        
         marketAPIProvider = MarketAPIProvider(session: urlSession)
         testExpectation = XCTestExpectation()
     }

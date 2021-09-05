@@ -20,7 +20,7 @@ extension URLRequestProtocol {
         guard let url = apiRequestType.url else { return nil }
         let contentType = httpMethod.makeContentTypeText(boundary: Self.boundary)
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = httpMethod.description
+        urlRequest.httpMethod = httpMethod.type
         urlRequest.setValue(contentType, forHTTPHeaderField: HttpMethod.contentType)
         
         return urlRequest

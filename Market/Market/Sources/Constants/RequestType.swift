@@ -22,7 +22,7 @@ enum RequestType {
         case .loadProduct(let id):
             return "/item/\(id)"
         case .postProduct:
-            return "/item/"
+            return "/item"
         case .patchProduct(let id):
             return "/item/\(id)"
         case .deleteProduct(let id):
@@ -31,20 +31,6 @@ enum RequestType {
     }
     var url: URL? {
         return URL(string: "\(RequestType.baseURL)\(urlPath)")
-    }
-    var httpMethod: HttpMethod {
-        switch self {
-        case .loadPage:
-            return .get
-        case .loadProduct:
-            return .get
-        case .postProduct:
-            return .post
-        case .patchProduct:
-            return .patch
-        case .deleteProduct:
-            return .delete
-        }
     }
     static let successStatusCode: ClosedRange<Int> = (200...299)
     static let baseURL: String = "https://camp-open-market-2.herokuapp.com"
