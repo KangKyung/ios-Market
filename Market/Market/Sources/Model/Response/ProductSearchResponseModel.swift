@@ -17,26 +17,12 @@ struct ProductSearchResponseModel: Decodable {
     let stock: Int
     let discountedPrice: Int?
     let thumbnails: [String]
-    let images: [Data]
+    let images: [String]
     let registrationDate: Double
     
     private enum CodingKeys: String, CodingKey {
-        case id, title, description, price, currency, stock, thumbnails, images
+        case id, title, descriptions, price, currency, stock, thumbnails, images
         case discountedPrice = "discounted_price"
         case registrationDate = "registration_date"
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(Int.self, forKey: .id)
-        self.title = try container.decode(String.self, forKey: .title)
-        self.descriptions = try container.decode(String.self, forKey: .description)
-        self.price = try container.decode(Int.self, forKey: .price)
-        self.currency = try container.decode(String.self, forKey: .currency)
-        self.stock = try container.decode(Int.self, forKey: .stock)
-        self.discountedPrice = try container.decode(Int?.self, forKey: .discountedPrice)
-        self.thumbnails = try container.decode([String].self, forKey: .thumbnails)
-        self.images = try container.decode([Data].self, forKey: .images)
-        self.registrationDate = try container.decode(Double.self, forKey: .registrationDate)
     }
 }

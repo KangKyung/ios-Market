@@ -10,44 +10,47 @@ import XCTest
 
 extension MarketNetworkModelTest {
     
-    func testPost_성공하는_경우() {
+    func testPost_상품_등록() {
         // given
-        setRequestHandler(shouldSuccess: true)
+        let responseData = NetworkModelDummy.expectedResponseData
+        MockURLProtocol.requestHandler = { request in
+            guard let url = request.url else {
+                fatalError()
+            }
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil,
+                                           headerFields: nil)
+            
+            return (response, responseData, nil)
+        }
         // when
         marketAPIProvider?.postProduct(product: NetworkModelDummy.productRegistrationRequestModel,
-                                      apiRequestType: .postProduct) { result in
+                                       apiRequestType: .postProduct
+        ) { (result: Result<ResponseModel, ProviderError>) in
             // then
             switch result {
-            case .success:
-                XCTAssert(true)
-            case .failure:
-                XCTFail("Test fail!!")
+            case .success(let product):
+                do {
+                    let expectedResponseModel =
+                        try JSONDecoder().decode(ProductSearchResponseModel.self,
+                                                 from: responseData)
+                    XCTAssertEqual(product.title, expectedResponseModel.title)
+                    XCTAssertEqual(product.currency, expectedResponseModel.currency)
+                    XCTAssertEqual(product.descriptions, expectedResponseModel.descriptions)
+                    XCTAssertEqual(product.stock, expectedResponseModel.stock)
+                    XCTAssertEqual(product.price, expectedResponseModel.price)
+                    XCTAssertEqual(product.images[0], expectedResponseModel.images[0])
+
+                } catch {
+                    print(error)
+                }
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
             }
             self.testExpectation?.fulfill()
         }
         
         if let expectation = testExpectation {
-            wait(for: [expectation], timeout: 5)
-        }
-    }
-    func testPost_실패하는_경우() {
-        // given
-        setRequestHandler(shouldSuccess: false)
-        // when
-        marketAPIProvider?.postProduct(product: NetworkModelDummy.productRegistrationRequestModel,
-                                      apiRequestType: .postProduct) { result in
-            switch result {
-            // then
-            case .success:
-                XCTFail("Test fail!!")
-            case .failure:
-                XCTAssert(true)
-            }
-            self.testExpectation?.fulfill()
-        }
-        
-        if let expectation = testExpectation {
-            wait(for: [expectation], timeout: 5)
+            wait(for: [expectation], timeout: 10)
         }
     }
 }

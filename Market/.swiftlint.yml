@@ -2,6 +2,7 @@ excluded:
   - Pods
   - Market/Sources/Entries/AppDelegate.swift
   - Market/Sources/Entries/SceneDelegate.swift
+  - MarketTests/TestDouble
 disabled_rules:
   - function_parameter_count
   - trailing_whitespace

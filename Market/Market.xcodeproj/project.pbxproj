@@ -36,6 +36,7 @@
 		C695EEF026E047DC00B48E74 /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = C695EEEF26E047DC00B48E74 /* Update.swift */; };
 		C695EEF226E047E300B48E74 /* Delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = C695EEF126E047E300B48E74 /* Delete.swift */; };
 		C695EEF726E06A2D00B48E74 /* NetworkModelDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C695EEF626E06A2D00B48E74 /* NetworkModelDummy.swift */; };
+		C6B5822126E4B7D9003A67EA /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B5822026E4B7D9003A67EA /* ResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		C695EEEF26E047DC00B48E74 /* Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
 		C695EEF126E047E300B48E74 /* Delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delete.swift; sourceTree = "<group>"; };
 		C695EEF626E06A2D00B48E74 /* NetworkModelDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModelDummy.swift; sourceTree = "<group>"; };
+		C6B5822026E4B7D9003A67EA /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 				C67C55BA26DF816800128E16 /* Product.swift */,
 				C67C55BB26DF816800128E16 /* ProductSearchResponseModel.swift */,
 				C67C55BC26DF816800128E16 /* ListSearchResponseModel.swift */,
+				C6B5822026E4B7D9003A67EA /* ResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				C67C55C226DF816800128E16 /* ProductSearchResponseModel.swift in Sources */,
 				C67C55CF26DF870000128E16 /* URLRequestProtocol.swift in Sources */,
 				C67C55A826DF771500128E16 /* ViewController.swift in Sources */,
+				C6B5822126E4B7D9003A67EA /* ResponseModel.swift in Sources */,
 				C67C55A026DF771500128E16 /* AppDelegate.swift in Sources */,
 				C67C55C526DF816800128E16 /* ProductRegistrationRequestModel.swift in Sources */,
 				C67C55DA26DF985900128E16 /* MarketAPIProvider.swift in Sources */,

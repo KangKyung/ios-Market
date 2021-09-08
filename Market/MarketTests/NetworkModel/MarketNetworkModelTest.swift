@@ -24,26 +24,4 @@ class MarketNetworkModelTest: XCTestCase {
         marketAPIProvider = nil
         testExpectation = nil
     }
-    func setRequestHandler(shouldSuccess: Bool) {
-        MockURLProtocol.requestHandler = { request in
-            guard let url = request.url else {
-                fatalError()
-            }
-            
-            let response: HTTPURLResponse?
-            if shouldSuccess {
-                response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil,
-                                           headerFields: nil)
-            } else {
-                response = HTTPURLResponse(url: url, statusCode: 404, httpVersion: nil,
-                                           headerFields: nil)
-            }
-            guard let asset = NSDataAsset(name: "Item") else {
-                fatalError()
-            }
-            let data = asset.data
-            
-            return (response, data, nil)
-        }
-    }
 }

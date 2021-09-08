@@ -10,38 +10,40 @@ import XCTest
 
 extension MarketNetworkModelTest {
     
-    func testDelete_성공하는_경우() {
+    func testDelete_상품_삭제() {
         // given
-        setRequestHandler(shouldSuccess: true)
-        // when
-        marketAPIProvider?.deleteProduct(product: NetworkModelDummy.productDeletionRequestModel,
-                                         apiRequestType: .deleteProduct(id: 1)) { result in
-            switch result {
-            // then
-            case .success:
-                XCTAssert(true)
-            case .failure:
-                XCTFail("Test fail!!")
+        let responseData = NetworkModelDummy.expectedResponseData
+        MockURLProtocol.requestHandler = { request in
+            guard let url = request.url else {
+                fatalError()
             }
-            self.testExpectation?.fulfill()
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil,
+                                           headerFields: nil)
+            
+            return (response, responseData, nil)
         }
-        
-        if let expectation = testExpectation {
-            wait(for: [expectation], timeout: 5)
-        }
-    }
-    func testDelete_실패하는_경우() {
-        // given
-        setRequestHandler(shouldSuccess: false)
         // when
         marketAPIProvider?.deleteProduct(product: NetworkModelDummy.productDeletionRequestModel,
                                          apiRequestType: .deleteProduct(id: 1)) { result in
-            switch result {
             // then
-            case .success:
-                XCTFail("Test fail!!")
-            case .failure:
-                XCTAssert(true)
+            switch result {
+            case .success(let product):
+                do {
+                    let expectedResponseModel =
+                        try JSONDecoder().decode(ProductSearchResponseModel.self,
+                                                 from: responseData)
+                    XCTAssertEqual(product.title, expectedResponseModel.title)
+                    XCTAssertEqual(product.currency, expectedResponseModel.currency)
+                    XCTAssertEqual(product.descriptions, expectedResponseModel.descriptions)
+                    XCTAssertEqual(product.stock, expectedResponseModel.stock)
+                    XCTAssertEqual(product.price, expectedResponseModel.price)
+                    XCTAssertEqual(product.images[0], expectedResponseModel.images[0])
+
+                } catch {
+                    print(error)
+                }
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
             }
             self.testExpectation?.fulfill()
         }
