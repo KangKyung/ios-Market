@@ -29,20 +29,14 @@ extension MarketNetworkModelTest {
             // then
             switch result {
             case .success(let product):
-                do {
-                    let expectedResponseModel =
-                        try JSONDecoder().decode(ProductSearchResponseModel.self,
-                                                 from: responseData)
-                    XCTAssertEqual(product.title, expectedResponseModel.title)
-                    XCTAssertEqual(product.currency, expectedResponseModel.currency)
-                    XCTAssertEqual(product.descriptions, expectedResponseModel.descriptions)
-                    XCTAssertEqual(product.stock, expectedResponseModel.stock)
-                    XCTAssertEqual(product.price, expectedResponseModel.price)
-                    XCTAssertEqual(product.images[0], expectedResponseModel.images[0])
-
-                } catch {
-                    print(error)
-                }
+                let expectedResponseModel =
+                    try? JSONDecoder().decode(ProductSearchResponseModel.self, from: responseData)
+                XCTAssertEqual(product.title, expectedResponseModel?.title)
+                XCTAssertEqual(product.currency, expectedResponseModel?.currency)
+                XCTAssertEqual(product.descriptions, expectedResponseModel?.descriptions)
+                XCTAssertEqual(product.stock, expectedResponseModel?.stock)
+                XCTAssertEqual(product.price, expectedResponseModel?.price)
+                XCTAssertEqual(product.images[0], expectedResponseModel?.images[0])
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }

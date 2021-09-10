@@ -27,26 +27,19 @@ extension MarketNetworkModelTest {
             // then
             switch result {
             case .success(let product):
-                do {
-                    let expectedResponseModel =
-                        try JSONDecoder().decode(ListSearchResponseModel.self,
-                                                 from: responseData)
-                    print(product)
-                    print(expectedResponseModel)
-                    XCTAssertEqual(product.page, expectedResponseModel.page)
-                    XCTAssertEqual(product.items[0].id, expectedResponseModel.items[0].id)
-                    XCTAssertEqual(product.items[0].title, expectedResponseModel.items[0].title)
-                    XCTAssertEqual(product.items[0].price, expectedResponseModel.items[0].price)
-                    XCTAssertEqual(product.items[0].currency,
-                                   expectedResponseModel.items[0].currency)
-                    XCTAssertEqual(product.items[0].stock, expectedResponseModel.items[0].stock)
-                    XCTAssertEqual(product.items[0].thumbnails[0],
-                                   expectedResponseModel.items[0].thumbnails[0])
-                    XCTAssertEqual(product.items[0].registrationDate,
-                                   expectedResponseModel.items[0].registrationDate)
-                } catch {
-                    print(error)
-                }
+                let expectedResponseModel =
+                    try? JSONDecoder().decode(ListSearchResponseModel.self, from: responseData)
+                XCTAssertEqual(product.page, expectedResponseModel?.page)
+                XCTAssertEqual(product.items[0].id, expectedResponseModel?.items[0].id)
+                XCTAssertEqual(product.items[0].title, expectedResponseModel?.items[0].title)
+                XCTAssertEqual(product.items[0].price, expectedResponseModel?.items[0].price)
+                XCTAssertEqual(product.items[0].currency,
+                               expectedResponseModel?.items[0].currency)
+                XCTAssertEqual(product.items[0].stock, expectedResponseModel?.items[0].stock)
+                XCTAssertEqual(product.items[0].thumbnails[0],
+                               expectedResponseModel?.items[0].thumbnails[0])
+                XCTAssertEqual(product.items[0].registrationDate,
+                               expectedResponseModel?.items[0].registrationDate)
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
@@ -74,20 +67,14 @@ extension MarketNetworkModelTest {
             switch result {
             // then
             case .success(let product):
-                do {
-                    let expectedResponseModel =
-                        try JSONDecoder().decode(ProductSearchResponseModel.self,
-                                                 from: responseData)
-                    XCTAssertEqual(product.title, expectedResponseModel.title)
-                    XCTAssertEqual(product.currency, expectedResponseModel.currency)
-                    XCTAssertEqual(product.descriptions, expectedResponseModel.descriptions)
-                    XCTAssertEqual(product.stock, expectedResponseModel.stock)
-                    XCTAssertEqual(product.price, expectedResponseModel.price)
-                    XCTAssertEqual(product.images[0], expectedResponseModel.images[0])
-
-                } catch {
-                    print(error)
-                }
+                let expectedResponseModel =
+                    try? JSONDecoder().decode(ProductSearchResponseModel.self, from: responseData)
+                XCTAssertEqual(product.title, expectedResponseModel?.title)
+                XCTAssertEqual(product.currency, expectedResponseModel?.currency)
+                XCTAssertEqual(product.descriptions, expectedResponseModel?.descriptions)
+                XCTAssertEqual(product.stock, expectedResponseModel?.stock)
+                XCTAssertEqual(product.price, expectedResponseModel?.price)
+                XCTAssertEqual(product.images[0], expectedResponseModel?.images[0])
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
