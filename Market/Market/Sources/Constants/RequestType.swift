@@ -19,14 +19,12 @@ enum RequestType {
         switch self {
         case .loadPage(let page):
             return "/items/\(page)"
-        case .loadProduct(let id):
+        case .loadProduct(let id),
+             .patchProduct(let id),
+             .deleteProduct(let id):
             return "/item/\(id)"
         case .postProduct:
             return "/item"
-        case .patchProduct(let id):
-            return "/item/\(id)"
-        case .deleteProduct(let id):
-            return "/item/\(id)"
         }
     }
     var url: URL? {
