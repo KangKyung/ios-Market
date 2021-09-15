@@ -34,6 +34,9 @@
 		C6EC6C2926F1C64200D5168F /* ValidityCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EC6C1E26F1C64200D5168F /* ValidityCheck.swift */; };
 		C6EC6C2A26F1C64200D5168F /* NetworkModelDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EC6C2126F1C64200D5168F /* NetworkModelDummy.swift */; };
 		C6EC6C2B26F1C64200D5168F /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EC6C2326F1C64200D5168F /* MockURLProtocol.swift */; };
+		C6EC6C2D26F1E51700D5168F /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EC6C2C26F1E51700D5168F /* HomeContentView.swift */; };
+		C6EC6C2F26F1E54C00D5168F /* SearchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EC6C2E26F1E54C00D5168F /* SearchContentView.swift */; };
+		C6EC6C3126F1E55500D5168F /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EC6C3026F1E55500D5168F /* ProfileContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		C6EC6C1E26F1C64200D5168F /* ValidityCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidityCheck.swift; sourceTree = "<group>"; };
 		C6EC6C2126F1C64200D5168F /* NetworkModelDummy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModelDummy.swift; sourceTree = "<group>"; };
 		C6EC6C2326F1C64200D5168F /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		C6EC6C2C26F1E51700D5168F /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
+		C6EC6C2E26F1E54C00D5168F /* SearchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContentView.swift; sourceTree = "<group>"; };
+		C6EC6C3026F1E55500D5168F /* ProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,8 +239,11 @@
 		C6EC6BF426F1C56C00D5168F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C6E0FB1A26F1BFD800A43CD6 /* ContentView.swift */,
 				C6E0FB1826F1BFD800A43CD6 /* MarketApp.swift */,
+				C6E0FB1A26F1BFD800A43CD6 /* ContentView.swift */,
+				C6EC6C2C26F1E51700D5168F /* HomeContentView.swift */,
+				C6EC6C2E26F1E54C00D5168F /* SearchContentView.swift */,
+				C6EC6C3026F1E55500D5168F /* ProfileContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -396,6 +405,7 @@
 			files = (
 				C6EC6BFA26F1C56C00D5168F /* HttpMethod.swift in Sources */,
 				C6E0FB1B26F1BFD800A43CD6 /* ContentView.swift in Sources */,
+				C6EC6C3126F1E55500D5168F /* ProfileContentView.swift in Sources */,
 				C6EC6BFF26F1C56C00D5168F /* MarketAPIProvider.swift in Sources */,
 				C6EC6C0926F1C56C00D5168F /* ProviderError.swift in Sources */,
 				C6EC6BF926F1C56C00D5168F /* Data.swift in Sources */,
@@ -403,8 +413,10 @@
 				C6EC6C0626F1C56C00D5168F /* ProductRegistrationRequestModel.swift in Sources */,
 				C6EC6BFD26F1C56C00D5168F /* URLRequestProtocol.swift in Sources */,
 				C6E0FB1926F1BFD800A43CD6 /* MarketApp.swift in Sources */,
+				C6EC6C2D26F1E51700D5168F /* HomeContentView.swift in Sources */,
 				C6EC6C0426F1C56C00D5168F /* ListSearchResponseModel.swift in Sources */,
 				C6EC6C0526F1C56C00D5168F /* ProductUpdateRequestModel.swift in Sources */,
+				C6EC6C2F26F1E54C00D5168F /* SearchContentView.swift in Sources */,
 				C6EC6C0726F1C56C00D5168F /* ProductDeletionRequestModel.swift in Sources */,
 				C6EC6C0226F1C56C00D5168F /* ProductSearchResponseModel.swift in Sources */,
 				C6EC6C0126F1C56C00D5168F /* ResponseModel.swift in Sources */,
