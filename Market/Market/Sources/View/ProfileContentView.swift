@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileContentView: View {
+    
     var body: some View {
         NavigationView {
             Text("SearchContentView")
@@ -16,7 +17,6 @@ struct ProfileContentView: View {
         }
     }
 }
-
 
 //struct ContentView_Previews: PreviewProvider {
 //    static var previews: some View {

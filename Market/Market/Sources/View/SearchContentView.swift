@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchContentView: View {
+    
     var body: some View {
         NavigationView {
             Text("SearchContentView")

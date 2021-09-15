@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6B0BB1D26F2AF2C00B3B887 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0BB1C26F2AF2C00B3B887 /* SearchCell.swift */; };
+		C6B0BB1F26F2AF4500B3B887 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0BB1E26F2AF4500B3B887 /* IconCell.swift */; };
+		C6B0BB2126F2AFB300B3B887 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0BB2026F2AFB300B3B887 /* CardCell.swift */; };
+		C6B0BB2326F2AFE800B3B887 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0BB2226F2AFE800B3B887 /* CardView.swift */; };
+		C6B0BB2526F2B00200B3B887 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0BB2426F2B00200B3B887 /* IconView.swift */; };
+		C6B0BB2726F2B04A00B3B887 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0BB2626F2B04A00B3B887 /* Icon.swift */; };
+		C6B0BB2926F2B06F00B3B887 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0BB2826F2B06F00B3B887 /* Card.swift */; };
 		C6E0FB1926F1BFD800A43CD6 /* MarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E0FB1826F1BFD800A43CD6 /* MarketApp.swift */; };
 		C6E0FB1B26F1BFD800A43CD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E0FB1A26F1BFD800A43CD6 /* ContentView.swift */; };
 		C6E0FB1D26F1BFD900A43CD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6E0FB1C26F1BFD900A43CD6 /* Assets.xcassets */; };
@@ -50,6 +57,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C6B0BB1C26F2AF2C00B3B887 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		C6B0BB1E26F2AF4500B3B887 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
+		C6B0BB2026F2AFB300B3B887 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		C6B0BB2226F2AFE800B3B887 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C6B0BB2426F2B00200B3B887 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
+		C6B0BB2626F2B04A00B3B887 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		C6B0BB2826F2B06F00B3B887 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C6E0FB1526F1BFD800A43CD6 /* Market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Market.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E0FB1826F1BFD800A43CD6 /* MarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketApp.swift; sourceTree = "<group>"; };
 		C6E0FB1A26F1BFD800A43CD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +118,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6B0BB1B26F2942900B3B887 /* HomeContentView */ = {
+			isa = PBXGroup;
+			children = (
+				C6EC6C2C26F1E51700D5168F /* HomeContentView.swift */,
+				C6B0BB2026F2AFB300B3B887 /* CardCell.swift */,
+				C6B0BB1C26F2AF2C00B3B887 /* SearchCell.swift */,
+				C6B0BB1E26F2AF4500B3B887 /* IconCell.swift */,
+				C6B0BB2226F2AFE800B3B887 /* CardView.swift */,
+				C6B0BB2426F2B00200B3B887 /* IconView.swift */,
+				C6B0BB2626F2B04A00B3B887 /* Icon.swift */,
+				C6B0BB2826F2B06F00B3B887 /* Card.swift */,
+			);
+			path = HomeContentView;
+			sourceTree = "<group>";
+		};
 		C6E0FB0C26F1BFD800A43CD6 = {
 			isa = PBXGroup;
 			children = (
@@ -241,7 +270,7 @@
 			children = (
 				C6E0FB1826F1BFD800A43CD6 /* MarketApp.swift */,
 				C6E0FB1A26F1BFD800A43CD6 /* ContentView.swift */,
-				C6EC6C2C26F1E51700D5168F /* HomeContentView.swift */,
+				C6B0BB1B26F2942900B3B887 /* HomeContentView */,
 				C6EC6C2E26F1E54C00D5168F /* SearchContentView.swift */,
 				C6EC6C3026F1E55500D5168F /* ProfileContentView.swift */,
 			);
@@ -405,6 +434,7 @@
 			files = (
 				C6EC6BFA26F1C56C00D5168F /* HttpMethod.swift in Sources */,
 				C6E0FB1B26F1BFD800A43CD6 /* ContentView.swift in Sources */,
+				C6B0BB2126F2AFB300B3B887 /* CardCell.swift in Sources */,
 				C6EC6C3126F1E55500D5168F /* ProfileContentView.swift in Sources */,
 				C6EC6BFF26F1C56C00D5168F /* MarketAPIProvider.swift in Sources */,
 				C6EC6C0926F1C56C00D5168F /* ProviderError.swift in Sources */,
@@ -412,16 +442,22 @@
 				C6EC6BFC26F1C56C00D5168F /* JsonRequestProtocol.swift in Sources */,
 				C6EC6C0626F1C56C00D5168F /* ProductRegistrationRequestModel.swift in Sources */,
 				C6EC6BFD26F1C56C00D5168F /* URLRequestProtocol.swift in Sources */,
+				C6B0BB2926F2B06F00B3B887 /* Card.swift in Sources */,
 				C6E0FB1926F1BFD800A43CD6 /* MarketApp.swift in Sources */,
+				C6B0BB1D26F2AF2C00B3B887 /* SearchCell.swift in Sources */,
 				C6EC6C2D26F1E51700D5168F /* HomeContentView.swift in Sources */,
 				C6EC6C0426F1C56C00D5168F /* ListSearchResponseModel.swift in Sources */,
 				C6EC6C0526F1C56C00D5168F /* ProductUpdateRequestModel.swift in Sources */,
+				C6B0BB2526F2B00200B3B887 /* IconView.swift in Sources */,
+				C6B0BB1F26F2AF4500B3B887 /* IconCell.swift in Sources */,
 				C6EC6C2F26F1E54C00D5168F /* SearchContentView.swift in Sources */,
 				C6EC6C0726F1C56C00D5168F /* ProductDeletionRequestModel.swift in Sources */,
 				C6EC6C0226F1C56C00D5168F /* ProductSearchResponseModel.swift in Sources */,
 				C6EC6C0126F1C56C00D5168F /* ResponseModel.swift in Sources */,
 				C6EC6BFE26F1C56C00D5168F /* MultiPartRequestProtocol.swift in Sources */,
+				C6B0BB2726F2B04A00B3B887 /* Icon.swift in Sources */,
 				C6EC6BFB26F1C56C00D5168F /* RequestType.swift in Sources */,
+				C6B0BB2326F2AFE800B3B887 /* CardView.swift in Sources */,
 				C6EC6C0326F1C56C00D5168F /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
