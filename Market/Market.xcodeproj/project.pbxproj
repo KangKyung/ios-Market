@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C693044026F37C4000E2C3DC /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C693043F26F37C4000E2C3DC /* CardViewModel.swift */; };
 		C6B0BB1D26F2AF2C00B3B887 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0BB1C26F2AF2C00B3B887 /* SearchCell.swift */; };
 		C6B0BB1F26F2AF4500B3B887 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0BB1E26F2AF4500B3B887 /* IconCell.swift */; };
 		C6B0BB2126F2AFB300B3B887 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0BB2026F2AFB300B3B887 /* CardCell.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		6DA4FAD6DCE99F4D56442796 /* Pods-Market.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.release.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.release.xcconfig"; sourceTree = "<group>"; };
 		C2AD1588A71A37D52D26BB32 /* Pods-Market.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.debug.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.debug.xcconfig"; sourceTree = "<group>"; };
+		C693043F26F37C4000E2C3DC /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		C6B0BB1C26F2AF2C00B3B887 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		C6B0BB1E26F2AF4500B3B887 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		C6B0BB2026F2AFB300B3B887 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
@@ -140,17 +142,65 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C693043B26F3781C00E2C3DC /* SearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				C6B0BB1C26F2AF2C00B3B887 /* SearchCell.swift */,
+			);
+			path = SearchCell;
+			sourceTree = "<group>";
+		};
+		C693043C26F3782B00E2C3DC /* IconCell */ = {
+			isa = PBXGroup;
+			children = (
+				C6B0BB2626F2B04A00B3B887 /* Icon.swift */,
+				C6B0BB2426F2B00200B3B887 /* IconView.swift */,
+				C6B0BB1E26F2AF4500B3B887 /* IconCell.swift */,
+			);
+			path = IconCell;
+			sourceTree = "<group>";
+		};
+		C693043D26F3783C00E2C3DC /* CardCell */ = {
+			isa = PBXGroup;
+			children = (
+				C6B0BB2826F2B06F00B3B887 /* Card.swift */,
+				C6B0BB2226F2AFE800B3B887 /* CardView.swift */,
+				C6B0BB2026F2AFB300B3B887 /* CardCell.swift */,
+			);
+			path = CardCell;
+			sourceTree = "<group>";
+		};
+		C693043E26F37BAC00E2C3DC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C693043F26F37C4000E2C3DC /* CardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C693044126F3A92900E2C3DC /* SearchContentView */ = {
+			isa = PBXGroup;
+			children = (
+				C6EC6C2E26F1E54C00D5168F /* SearchContentView.swift */,
+			);
+			path = SearchContentView;
+			sourceTree = "<group>";
+		};
+		C693044226F3A94300E2C3DC /* ProfileContentView */ = {
+			isa = PBXGroup;
+			children = (
+				C6EC6C3026F1E55500D5168F /* ProfileContentView.swift */,
+			);
+			path = ProfileContentView;
+			sourceTree = "<group>";
+		};
 		C6B0BB1B26F2942900B3B887 /* HomeContentView */ = {
 			isa = PBXGroup;
 			children = (
 				C6EC6C2C26F1E51700D5168F /* HomeContentView.swift */,
-				C6B0BB2026F2AFB300B3B887 /* CardCell.swift */,
-				C6B0BB1C26F2AF2C00B3B887 /* SearchCell.swift */,
-				C6B0BB1E26F2AF4500B3B887 /* IconCell.swift */,
-				C6B0BB2226F2AFE800B3B887 /* CardView.swift */,
-				C6B0BB2426F2B00200B3B887 /* IconView.swift */,
-				C6B0BB2626F2B04A00B3B887 /* Icon.swift */,
-				C6B0BB2826F2B06F00B3B887 /* Card.swift */,
+				C693043B26F3781C00E2C3DC /* SearchCell */,
+				C693043C26F3782B00E2C3DC /* IconCell */,
+				C693043D26F3783C00E2C3DC /* CardCell */,
 			);
 			path = HomeContentView;
 			sourceTree = "<group>";
@@ -218,6 +268,7 @@
 				C6EC6BE326F1C56C00D5168F /* Network */,
 				C6EC6BEA26F1C56C00D5168F /* Model */,
 				C6EC6BF426F1C56C00D5168F /* View */,
+				C693043E26F37BAC00E2C3DC /* ViewModel */,
 				C6EC6BF726F1C56C00D5168F /* Error */,
 			);
 			path = Sources;
@@ -295,8 +346,8 @@
 				C6E0FB1826F1BFD800A43CD6 /* MarketApp.swift */,
 				C6E0FB1A26F1BFD800A43CD6 /* ContentView.swift */,
 				C6B0BB1B26F2942900B3B887 /* HomeContentView */,
-				C6EC6C2E26F1E54C00D5168F /* SearchContentView.swift */,
-				C6EC6C3026F1E55500D5168F /* ProfileContentView.swift */,
+				C693044126F3A92900E2C3DC /* SearchContentView */,
+				C693044226F3A94300E2C3DC /* ProfileContentView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -520,6 +571,7 @@
 				C6B0BB1F26F2AF4500B3B887 /* IconCell.swift in Sources */,
 				C6EC6C2F26F1E54C00D5168F /* SearchContentView.swift in Sources */,
 				C6EC6C0726F1C56C00D5168F /* ProductDeletionRequestModel.swift in Sources */,
+				C693044026F37C4000E2C3DC /* CardViewModel.swift in Sources */,
 				C6EC6C0226F1C56C00D5168F /* ProductSearchResponseModel.swift in Sources */,
 				C6EC6C0126F1C56C00D5168F /* ResponseModel.swift in Sources */,
 				C6EC6BFE26F1C56C00D5168F /* MultiPartRequestProtocol.swift in Sources */,

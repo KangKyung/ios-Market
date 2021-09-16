@@ -14,11 +14,11 @@ struct HomeContentView: View {
         UINavigationBar.appearance().backgroundColor = UIColor(.white)
         UINavigationBar.appearance().shadowImage = UIImage()
     }
-    
+        
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVStack(alignment: .leading) {
+                LazyVStack(alignment: .leading, spacing: 40) {
                     SearchCell()
                     IconCell()
                     CardCell()
@@ -28,7 +28,6 @@ struct HomeContentView: View {
             .navigationBarTitle("Liib", displayMode: .inline)
             .navigationBarItems(trailing: Image(systemName: "bell"))
         }
-
     }
 }
 
