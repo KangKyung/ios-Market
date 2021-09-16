@@ -5,6 +5,7 @@
 //  Created by 강경 on 2021/09/16.
 //
 
+import Combine
 import SwiftUI
 
 struct CardCell: View {
@@ -14,24 +15,64 @@ struct CardCell: View {
         GridItem(.flexible())
     ]
     let height: CGFloat = 150
-    let cards: [Card] = MockStore.cards
-
+    @ObservedObject var viewModel = CardViewModel()
+    
     var body: some View {
         ScrollView {
             HStack(alignment: .center, spacing: 10){
                 Text("Liib Top Ranking")
                 Spacer()
                 Text("view All")
+                    .font(.system(size: 12))
             }
-
-            LazyVGrid(columns: columns, spacing: 16) {
-                ForEach(cards) { card in
-                    CardView(title: card.title)
-                        .frame(height: height)
+            
+            if viewModel.products.count == 0 {
+                ProgressView().frame(width: UIScreen.main.bounds.width, alignment: .center)
+            } else {
+                LazyVGrid(columns: columns, spacing: 16) {
+                    ForEach(0..<viewModel.products.count) { index in
+                        CardView(url: viewModel.products[index].thumbnails[0],
+                                 title: viewModel.products[index].title,
+                                 price: viewModel.products[index].price)
+                            .frame(height: height)
+                    }
                 }
+            }
+            
+            
+        }
+    }
+}
+
+
+final class CardViewModel: ObservableObject {
+    
+    @Published var products: [Product] = []
+    let marketAPIProvider = MarketAPIProvider()
+    
+    init() {
+        marketAPIProvider.getProductList(apiRequestType: .loadPage(page: 1)) { result in
+            switch result {
+            case .success(let product):
+                self.products = product.items
+                print(self.products.count)
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
+    
+    //    private func fetchData() {
+    //        marketAPIProvider.getProductList(apiRequestType: .loadPage(page: 1)) { result in
+    //            switch result {
+    //            case .success(let product):
+    //                self.products = product.items
+    //                print(self.products.count)
+    //            case .failure(let error):
+    //                print(error.localizedDescription)
+    //            }
+    //        }
+    //    }
 }
 
 struct MockStore {

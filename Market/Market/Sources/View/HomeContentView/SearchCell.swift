@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchCell: View {
     
     @State private var string: String = ""
+    
     var body: some View {
         Text("Find products that are safe and \nhelp you care for your skin")
         HStack {

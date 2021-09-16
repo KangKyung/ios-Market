@@ -9,9 +9,15 @@ import SwiftUI
 
 struct SearchContentView: View {
     
+    @State private var string: String = ""
+    
     var body: some View {
         NavigationView {
             Text("SearchContentView")
+            HStack {
+                Image(systemName: "magnifyingglass")
+                TextField("Brand, product, ingredient", text: $string)
+            }
             .navigationBarTitle("Text Field", displayMode: .inline)
             .navigationBarItems(leading: Image(systemName: "arrow.backward"))
         }

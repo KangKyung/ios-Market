@@ -6,15 +6,20 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CardView: View {
     
+    let url: String
     let title: String
+    let price: Int
     var body: some View {
-        VStack {
-            RoundedRectangle(cornerRadius: 12).foregroundColor(.random)
-            Text(title)
-                .font(.title2)
+        VStack(alignment: .leading) {
+            KFImage(URL(string: url))
+                .resizable()
+                .frame(width: 120, height: 120)
+            Text(title).font(.system(size: 12))
+            Text("\(price)").font(.system(size: 10))
         }
     }
 }
