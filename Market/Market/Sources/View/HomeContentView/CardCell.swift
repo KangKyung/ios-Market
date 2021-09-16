@@ -18,28 +18,24 @@ struct CardCell: View {
     @ObservedObject var viewModel = CardViewModel()
     
     var body: some View {
-        ScrollView {
-            HStack(alignment: .center, spacing: 10){
-                Text("Liib Top Ranking")
-                Spacer()
-                Text("view All")
-                    .font(.system(size: 12))
-            }
-            
-            if viewModel.products.count == 0 {
-                ProgressView().frame(width: UIScreen.main.bounds.width, alignment: .center)
-            } else {
-                LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(0..<viewModel.products.count) { index in
-                        CardView(url: viewModel.products[index].thumbnails[0],
-                                 title: viewModel.products[index].title,
-                                 price: viewModel.products[index].price)
-                            .frame(height: height)
-                    }
+        HStack(alignment: .center, spacing: 10) {
+            Text("Liib Top Ranking")
+            Spacer()
+            Text("view All")
+                .font(.system(size: 12))
+        }
+        
+        if viewModel.products.count == 0 {
+            ProgressView().frame(width: UIScreen.main.bounds.width, alignment: .center)
+        } else {
+            LazyVGrid(columns: columns, spacing: 16) {
+                ForEach(0..<viewModel.products.count) { index in
+                    CardView(url: viewModel.products[index].thumbnails[0],
+                             title: viewModel.products[index].title,
+                             price: viewModel.products[index].price)
+                        .frame(height: height)
                 }
             }
-            
-            
         }
     }
 }

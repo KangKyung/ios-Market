@@ -13,7 +13,6 @@ struct SearchContentView: View {
     
     var body: some View {
         NavigationView {
-            Text("SearchContentView")
             HStack {
                 Image(systemName: "magnifyingglass")
                 TextField("Brand, product, ingredient", text: $string)

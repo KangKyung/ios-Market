@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -137,7 +137,6 @@
 				C2AD1588A71A37D52D26BB32 /* Pods-Market.debug.xcconfig */,
 				6DA4FAD6DCE99F4D56442796 /* Pods-Market.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -681,6 +680,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Market/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = SPWQVPZS24;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Market/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -703,6 +703,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Market/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = SPWQVPZS24;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Market/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -722,6 +723,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SPWQVPZS24;
 				INFOPLIST_FILE = MarketTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -741,6 +743,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SPWQVPZS24;
 				INFOPLIST_FILE = MarketTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
