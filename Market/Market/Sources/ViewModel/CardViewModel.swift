@@ -26,7 +26,7 @@ final class CardViewModel: ObservableObject {
                 var cardViewProducts: [CardViewProduct] = []
                 for item in product.items {
                     // TODO: - 하나씩 추가되도록 할건지, 한꺼번에 추가되도록 할건지 고민
-//                    self.products.append(self.cardViewProduct(convertedFrom: item))
+                    //                    self.products.append(self.cardViewProduct(convertedFrom: item))
                     cardViewProducts.append(self.cardViewProduct(convertedFrom: item))
                 }
                 self.products.append(contentsOf: cardViewProducts)
@@ -37,38 +37,25 @@ final class CardViewModel: ObservableObject {
     }
     private func cardViewProduct(convertedFrom product: Product) -> CardViewProduct {
         rank += 1
-        let urlString = product.thumbnails.first ?? ""
-        let titleString = product.title
-        var isPriceDiscounted: Bool
-        let originalPriceString = product.currency + " \(product.price)"
-        var discountedPriceString: String
-        if let discountedPrice = product.discountedPrice {
-            isPriceDiscounted = true
-            discountedPriceString = product.currency + " \(discountedPrice)"
-        } else {
-            isPriceDiscounted = false
-            discountedPriceString = ""
-        }
-        var isSoldOut: Bool
-        var stockInfoString: String
-        if product.stock == 0 {
-            isSoldOut = true
-            stockInfoString = "sold out"
-        } else {
-            isSoldOut = false
-            stockInfoString = "stock: \(product.stock)"
-        }
+        let isPriceDiscounted = product.discountedPrice != nil ? true : false
+        let discountedPriceString =
+            product.discountedPrice != nil ? product.currency + " \(product.discountedPrice!)" : ""
+        let isSoldOut = product.stock == 0 ? true : false
+        let stockInfoString = product.stock == 0 ? "sold out" : "stock: \(product.stock)"
         
-        return CardViewProduct(rank: rank, representativeImageUrl: urlString,
-                               title: titleString, isPriceDiscounted: isPriceDiscounted,
-                               originalPrice: originalPriceString,
-                               discountedPrice: discountedPriceString, isSoldOut: isSoldOut,
-                               stockInfo: stockInfoString)
+        return CardViewProduct(
+            id: product.id, rank: rank,
+            representativeImageUrl: product.thumbnails.first ?? "",
+            title: product.title, isPriceDiscounted: isPriceDiscounted,
+            originalPrice: product.currency + " \(product.price)",
+            discountedPrice: discountedPriceString, isSoldOut: isSoldOut,
+            stockInfo: stockInfoString)
     }
 }
 
 struct CardViewProduct {
     
+    let id: Int
     let rank: Int
     let representativeImageUrl: String
     let title: String

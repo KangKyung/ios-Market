@@ -44,6 +44,7 @@ struct CardView: View {
             }
             Text(title)
                 .font(.system(size: 12))
+                .foregroundColor(.black)
             HStack {
                 if isPriceDiscounted {
                     Text(originalPrice)
@@ -52,9 +53,11 @@ struct CardView: View {
                         .foregroundColor(.red)
                     Text(discountedPrice)
                         .font(.system(size: 10))
+                        .foregroundColor(.black)
                 } else {
                     Text(originalPrice)
                         .font(.system(size: 10))
+                        .foregroundColor(.black)
                 }
             }
             if isSoldOut {
@@ -64,19 +67,9 @@ struct CardView: View {
             } else {
                 Text(stockInfo)
                     .font(.system(size: 10))
+                    .foregroundColor(.black)
             }
             
         }
-    }
-}
-
-extension Color {
-    
-    static var random: Color {
-        return Color(
-            red: .random(in: 0...1),
-            green: .random(in: 0...1),
-            blue: .random(in: 0...1)
-        )
     }
 }

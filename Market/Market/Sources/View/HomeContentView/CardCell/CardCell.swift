@@ -31,12 +31,15 @@ struct CardCell: View {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(0..<viewModel.products.count) { index in
                         let product = viewModel.products[index]
-                        CardView(rank: product.rank, imageUrl: product.representativeImageUrl,
-                                 title: product.title, isPriceDiscounted: product.isPriceDiscounted,
-                                 originalPrice: product.originalPrice,
-                                 discountedPrice: product.discountedPrice,
-                                 isSoldOut: product.isSoldOut, stockInfo: product.stockInfo)
-                            .frame(height: height)
+                        
+                        NavigationLink(destination: DetailContentView(id: product.id)) {
+                            CardView(rank: product.rank, imageUrl: product.representativeImageUrl,
+                                     title: product.title, isPriceDiscounted: product.isPriceDiscounted,
+                                     originalPrice: product.originalPrice,
+                                     discountedPrice: product.discountedPrice,
+                                     isSoldOut: product.isSoldOut, stockInfo: product.stockInfo)
+                                .frame(height: height)
+                        }
                     }
                 }
             }
